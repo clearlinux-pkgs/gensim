@@ -4,7 +4,7 @@
 #
 Name     : gensim
 Version  : 1.0.1
-Release  : 2
+Release  : 3
 URL      : http://pypi.debian.net/gensim/gensim-1.0.1.tar.gz
 Source0  : http://pypi.debian.net/gensim/gensim-1.0.1.tar.gz
 Summary  : Python framework for fast Vector Space Modelling
