@@ -4,19 +4,23 @@
 #
 Name     : gensim
 Version  : 3.3.0
-Release  : 17
+Release  : 18
 URL      : http://pypi.debian.net/gensim/gensim-3.3.0.tar.gz
 Source0  : http://pypi.debian.net/gensim/gensim-3.3.0.tar.gz
 Summary  : Python framework for fast Vector Space Modelling
 Group    : Development/Tools
 License  : LGPL-2.1
-Requires: gensim-legacypython
 Requires: gensim-python3
 Requires: gensim-python
+Requires: Sphinx
 Requires: numpy
+Requires: pytest
+Requires: python-mock
+Requires: scikit-learn
 Requires: scipy
 Requires: six
 Requires: smart_open
+Requires: tensorflow
 BuildRequires : Cython
 BuildRequires : numpy
 BuildRequires : pbr
@@ -36,19 +40,9 @@ BuildRequires : smart_open
         |Travis|_
         |Wheel|_
 
-%package legacypython
-Summary: legacypython components for the gensim package.
-Group: Default
-Requires: python-core
-
-%description legacypython
-legacypython components for the gensim package.
-
-
 %package python
 Summary: python components for the gensim package.
 Group: Default
-Requires: gensim-legacypython
 Requires: gensim-python3
 
 %description python
@@ -72,25 +66,18 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1517678888
-python2 setup.py build -b py2
+export SOURCE_DATE_EPOCH=1522283460
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1517678888
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
-python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+python3 -tt setup.py build -b py3 install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
-
-%files legacypython
-%defattr(-,root,root,-)
-/usr/lib/python2*/*
 
 %files python
 %defattr(-,root,root,-)
