@@ -4,7 +4,7 @@
 #
 Name     : gensim
 Version  : 3.3.0
-Release  : 20
+Release  : 21
 URL      : http://pypi.debian.net/gensim/gensim-3.3.0.tar.gz
 Source0  : http://pypi.debian.net/gensim/gensim-3.3.0.tar.gz
 Summary  : Python framework for fast Vector Space Modelling
@@ -12,10 +12,7 @@ Group    : Development/Tools
 License  : LGPL-2.1
 Requires: gensim-python3
 Requires: gensim-python
-Requires: Sphinx
 Requires: numpy
-Requires: pytest
-Requires: python-mock
 Requires: scikit-learn
 Requires: scipy
 Requires: six
@@ -66,7 +63,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1522283460
+export SOURCE_DATE_EPOCH=1528564391
 python3 setup.py build -b py3
 
 %install
