@@ -4,7 +4,7 @@
 #
 Name     : gensim
 Version  : 3.8.1
-Release  : 44
+Release  : 45
 URL      : https://files.pythonhosted.org/packages/73/f2/e9af000df6419bf1a63ffed3e6033a1b1d8fcf2f971fcdac15296619aff8/gensim-3.8.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/73/f2/e9af000df6419bf1a63ffed3e6033a1b1d8fcf2f971fcdac15296619aff8/gensim-3.8.1.tar.gz
 Summary  : Python framework for fast Vector Space Modelling
@@ -22,6 +22,7 @@ BuildRequires : Cython
 BuildRequires : Pyro4
 BuildRequires : buildreq-distutils3
 BuildRequires : numpy
+BuildRequires : python3-dev
 BuildRequires : scipy
 BuildRequires : six
 BuildRequires : smart_open
@@ -59,6 +60,7 @@ python components for the gensim package.
 Summary: python3 components for the gensim package.
 Group: Default
 Requires: python3-core
+Provides: pypi(gensim)
 
 %description python3
 python3 components for the gensim package.
@@ -66,13 +68,14 @@ python3 components for the gensim package.
 
 %prep
 %setup -q -n gensim-3.8.1
+cd %{_builddir}/gensim-3.8.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569591718
+export SOURCE_DATE_EPOCH=1582929514
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
@@ -89,7 +92,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/gensim
-cp COPYING %{buildroot}/usr/share/package-licenses/gensim/COPYING
+cp %{_builddir}/gensim-3.8.1/COPYING %{buildroot}/usr/share/package-licenses/gensim/01a6b4bf79aca9b556822601186afab86e8c4fbf
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -100,7 +103,7 @@ echo ----[ mark ]----
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/gensim/COPYING
+/usr/share/package-licenses/gensim/01a6b4bf79aca9b556822601186afab86e8c4fbf
 
 %files python
 %defattr(-,root,root,-)
