@@ -4,7 +4,7 @@
 #
 Name     : gensim
 Version  : 3.8.3
-Release  : 48
+Release  : 49
 URL      : https://files.pythonhosted.org/packages/a0/b4/f4e45875a4cb1c4f6a76d6d07a2981753aab5f135dac2381f625e8807542/gensim-3.8.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/a0/b4/f4e45875a4cb1c4f6a76d6d07a2981753aab5f135dac2381f625e8807542/gensim-3.8.3.tar.gz
 Summary  : Python framework for fast Vector Space Modelling
