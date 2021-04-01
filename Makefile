@@ -1,5 +1,5 @@
 PKG_NAME := gensim
-URL = https://files.pythonhosted.org/packages/cc/ff/f809deb11f066dfe658fc9756ac7d04d1f8954d691f31ddd40d40db59b85/gensim-4.0.0.tar.gz
+URL = https://files.pythonhosted.org/packages/1f/6c/363d00aa23642f42b27b908c6474ab981c75882eefc084210d5b8ce8cd8e/gensim-4.0.1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
